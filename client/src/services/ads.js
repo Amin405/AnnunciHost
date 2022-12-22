@@ -1,7 +1,7 @@
 import axios from 'axios'
 import userService from './user'
 const baseUrl = '/api/items'
-const serverUrl = 'http://localhost:3001'
+const serverUrl = 'https://annunci-webserver.onrender.com'
 
 /**
  * GET: /api/items/images

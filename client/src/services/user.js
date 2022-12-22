@@ -35,7 +35,7 @@ const getUser = () => {
 const getUserID = async () => {
   const user = getUser()
   const updatedUrl = baseUrl + '/loggedUserId'
-  const req = await axios.get(updatedUrl, config(user.token))
+  const req = await axios.get(serverUrl + updatedUrl, config(user.token))
   return req.data
 }
 

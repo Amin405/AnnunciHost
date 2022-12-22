@@ -9,7 +9,7 @@ const serverUrl = 'https://annunci-webserver.onrender.com'
  */
 const getAllImages = async () => {
   const updateUrl = baseUrl + `/images`
-  const request = await axios.get(serverUrl + updateUrl)
+  const request = await axios.get(updateUrl)
   return request.data
 }
 
@@ -26,7 +26,7 @@ const makeImageLink = (id) => {
  * Return all ads from the database
  */
 const getAllItems = async () => {
-  const request = await axios.get(serverUrl + baseUrl)
+  const request = await axios.get(baseUrl)
   return request.data
 }
 
@@ -36,7 +36,7 @@ const getAllItems = async () => {
  */
 const getItemById = async (id) => {
   const updateUrl = baseUrl + `/${id}`
-  const request = await axios.get(serverUrl + updateUrl)
+  const request = await axios.get(updateUrl)
   return request.data
 }
 
@@ -46,7 +46,7 @@ const getItemById = async (id) => {
  */
 const getUserItems = async (id) => {
   const updatedUrl = baseUrl + `/user/${id}`
-  const request = await axios.get(serverUrl + updatedUrl)
+  const request = await axios.get(updatedUrl)
   return request.data
 }
 
@@ -55,7 +55,7 @@ const getUserItems = async (id) => {
  * Create a new ad
  */
 const createAd = async (newObj) => {
-  const response = await axios.post(serverUrl + baseUrl, newObj, {
+  const response = await axios.post(baseUrl, newObj, {
     headers: {
       'Content-Type': 'multipart/form-data',
       Authorization: `bearer ${userService.getToken()}`
@@ -70,7 +70,7 @@ const createAd = async (newObj) => {
  */
 const deleteAd = async (id) => {
   const updatedUrl = baseUrl + `/${id}`
-  return axios.delete(serverUrl + updatedUrl, {
+  return axios.delete(updatedUrl, {
     headers: {
       'Content-Type': 'multipart/form-data',
       Authorization: `bearer ${userService.getToken()}`
@@ -84,7 +84,7 @@ const deleteAd = async (id) => {
  */
 const commentAd = async (id, comment) => {
   const updatedUrl = baseUrl + `/${id}/commentAd`
-  const response = await axios.post(serverUrl + updatedUrl, { comment: comment })
+  const response = await axios.post(updatedUrl, { comment: comment })
   return response.data
 }
 

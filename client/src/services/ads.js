@@ -46,7 +46,7 @@ const getItemById = async (id) => {
  */
 const getUserItems = async (id) => {
   const updatedUrl = baseUrl + `/user/${id}`
-  const request = await axios.get(serverUrl + updatedUrl)
+  const request = await axios.get(updatedUrl)
   return request.data
 }
 
